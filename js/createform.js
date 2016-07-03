@@ -10,7 +10,7 @@ Form_Name= prompt("Enter Unique Form Name : ");
 if(Form_Name==null) window.location.assign("index.html");
 }while(Form_Name=="");
 
-$.post("http://gathologyg.pythonanywhere.com/API/Check_form_name/",
+$.post("https://gathologyg.pythonanywhere.com/API/Check_form_name/",
         {
           form_name: Form_Name
         },"json").fail(function() {location.reload();}).success(function() {$("body").css("cursor","wait"); openNav();  create_form();});
@@ -297,7 +297,7 @@ corrected=JSON.stringify(tobesent);
 //corrected;
 //corrected;
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/createforms/",
+        url: "https://gathologyg.pythonanywhere.com/API/createforms/",
         type: 'Post',
         dataType: "json",
         data:{key:JSON.stringify({  form_name: Form_Name,

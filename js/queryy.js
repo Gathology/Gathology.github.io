@@ -29,7 +29,7 @@ datat = location.search;
 datat=datat.replace("?","");
 datat=datat.replace("%20"," ");
 $("body").css("cursor","wait");
-$.post("http://gathologyg.pythonanywhere.com/API/requestFormDescription/",
+$.post("https://gathologyg.pythonanywhere.com/API/requestFormDescription/",
         {
           form_name: datat
         }, function( data) {
@@ -172,7 +172,7 @@ if(arr1!=null&&arr1.length!=0){
 onefunwzrequest=function(part){
     onefun(".one");
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({
@@ -214,7 +214,7 @@ onefun(".many");
 getyaxis(".many");
 
       $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({
@@ -276,7 +276,7 @@ else{ onefun(".many");
  twocols(".many");
 
       $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({
@@ -308,7 +308,7 @@ case 2:
 onefun("");
 twocols();
       $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({
@@ -345,7 +345,7 @@ else{ onefun(".many");
 //two cols
 twocols();
       $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({
@@ -378,7 +378,7 @@ case 7:onefun("");
 getyaxis("");
 if(cols.length<5){alert("Candlestick should have more than 4 in y-axis !");return;}
       $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
         type: 'Post',
         dataType: "json",
         data:{ key:JSON.stringify({

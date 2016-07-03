@@ -32,7 +32,7 @@ if("userr_name" in sessionStorage && sessionStorage.getItem("userr_name") !=  'n
 $("#nav").delegate("#topbar_login .align-right","click",function(){
   $("body").css("cursor","wait");
 
-$.post("http://gathologyg.pythonanywhere.com/API/login/",
+$.post("https://gathologyg.pythonanywhere.com/API/login/",
         { 
           username: $("#user").val(),
           password:$("#pass").val()

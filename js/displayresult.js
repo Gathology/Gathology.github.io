@@ -15,7 +15,7 @@ $("h2").append(datat);
 
 $("body").css("cursor","wait");
 addinthead='<tr><th>ID</th>'; //<th style="width:5%;">Edit Record</th></tr>';
-$.post("http://gathologyg.pythonanywhere.com/API/requestFormDescription/",
+$.post("https://gathologyg.pythonanywhere.com/API/requestFormDescription/",
         {
           form_name: datat
         }, function( data) {
@@ -33,7 +33,7 @@ $("thead").append(addinthead);
 
 rows=function(){
 
-$.post("http://gathologyg.pythonanywhere.com/API/displayResult/",
+$.post("https://gathologyg.pythonanywhere.com/API/displayResult/",
         {
           form_name: datat
         }, function( data) {
@@ -79,7 +79,7 @@ window.location.assign("editrecord.html?"+datat);
        var answer=confirm("Are you sure that you want to permenantly delete this record ?");
 if(answer){
   $("body").css("cursor","wait");
-$.post("http://gathologyg.pythonanywhere.com/FormsData/Delete_record/",
+$.post("https://gathologyg.pythonanywhere.com/FormsData/Delete_record/",
         {
           form_name: form_name,
           id:$(this).parents("tr").children("td:nth-child(1)").text()

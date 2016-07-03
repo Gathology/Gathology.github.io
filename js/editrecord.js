@@ -12,7 +12,7 @@ datat=datat.replace("?",'');
 datat=datat.replace("%20"," ");
 arr=datat.split("%");
 $("body").css("cursor","wait");
-$.post("http://gathologyg.pythonanywhere.com/API/displayResult/",
+$.post("https://gathologyg.pythonanywhere.com/API/displayResult/",
         {
           form_name: arr[0]
         }, function( data) {
@@ -31,7 +31,7 @@ displayrecord= function(){
 for(var i =0;i<results.length;i++)
 if(results[i].id==arr[1]) record=results[i];
 
-$.post("http://gathologyg.pythonanywhere.com/API/requestFormDescription/",
+$.post("https://gathologyg.pythonanywhere.com/API/requestFormDescription/",
         {
           form_name: arr[0]
         }, function( data) {
@@ -163,7 +163,7 @@ if(!okay){ alert("Some entries don't satisfy requirements !"); $("body").css("cu
 record.id=arr[1];
 
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/Edit_record/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/Edit_record/",
         type: 'Post',
         dataType: "json",
         data:{

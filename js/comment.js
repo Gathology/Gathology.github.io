@@ -29,7 +29,7 @@ $("#formnames ul").empty();
  $("#formnames ul").append('<li>Forms</li>'); 
 $("#formnames ul").append("<div id='load' align='center'><img src='images/colorbox/loading.gif'></div>"); 
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/return_category/",
+        url: "https://gathologyg.pythonanywhere.com/API/return_category/",
         type: 'Post',
         dataType: "json",
         data:{category:getvalue($(this).index()-1)},
@@ -61,7 +61,7 @@ $("h2").empty();
 $("h2").append(form_name);
 $("tbody").append("<div id='load' align='center'><img src='images/colorbox/loading.gif'></div>");
 addinthead='<tr><th>ID</th>'; //<th style="width:5%;">Edit Record</th></tr>';
-$.post("http://gathologyg.pythonanywhere.com/API/requestFormDescription/",
+$.post("https://gathologyg.pythonanywhere.com/API/requestFormDescription/",
         {
           form_name: form_name
         }, function( data) {
@@ -82,7 +82,7 @@ initiate_rate();
 
 initiate_rate=function(){
 $("#rate").empty(); $("#ratehere").empty();
-$.post("http://gathologyg.pythonanywhere.com/API/read_rate/",
+$.post("https://gathologyg.pythonanywhere.com/API/read_rate/",
         {
           form_name: form_name,
           username:sessionStorage.getItem("userr_name")
@@ -100,7 +100,7 @@ $.post("http://gathologyg.pythonanywhere.com/API/read_rate/",
 
 
   checkratedbefore=function(){
-$.post("http://gathologyg.pythonanywhere.com/API/check_rated/",
+$.post("https://gathologyg.pythonanywhere.com/API/check_rated/",
         {
           form_name: form_name,
           username: sessionStorage.getItem("userr_name")
@@ -116,7 +116,7 @@ $("#ratehere ul").removeClass("ratingtemp");
 
 rows=function(){
 
-$.post("http://gathologyg.pythonanywhere.com/API/displayResult/",
+$.post("https://gathologyg.pythonanywhere.com/API/displayResult/",
         {
           form_name: form_name
         }, function( data) {
@@ -148,7 +148,7 @@ $("tbody").append(addintbody);
 }
 /////comments
 displaycomments=function(){
-$.post("http://gathologyg.pythonanywhere.com/API/read_comments/",
+$.post("https://gathologyg.pythonanywhere.com/API/read_comments/",
         {
           form_name: form_name
         }, "json").fail(function() {
@@ -186,7 +186,7 @@ $("#comments").delegate("input" ,"change",function(){
   $("#comments").css("cursor","wait");
   $("input").css("cursor","wait");
   var cmnt=($(this).val()).replaceAll('"',"%%").replaceAll("'","&&");
-$.post("http://gathologyg.pythonanywhere.com/API/comment/",
+$.post("https://gathologyg.pythonanywhere.com/API/comment/",
         {
          form_name:form_name,
          username: sessionStorage.getItem("userr_name"),
@@ -208,7 +208,7 @@ createentercomment();
 
 $("#ratehere").delegate(".ratingtemp li","click",function(){
    $("body").css("cursor","wait");
-$.post("http://gathologyg.pythonanywhere.com/API/rate/",
+$.post("https://gathologyg.pythonanywhere.com/API/rate/",
         {
          form_name:form_name,
          username: sessionStorage.getItem("userr_name"),

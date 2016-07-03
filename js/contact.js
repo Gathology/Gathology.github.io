@@ -165,7 +165,7 @@ var con=$("#confirm-contact-form").val();
 
 
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/signup/",
+        url: "https://gathologyg.pythonanywhere.com/API/signup/",
         type: 'Post',
         dataType: "json",
         data:{key:JSON.stringify({

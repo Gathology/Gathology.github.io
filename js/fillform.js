@@ -11,7 +11,7 @@ datat=datat.replace("?",'');
 datat=datat.replace("%20"," ");
 $("body").css("cursor","wait");
 
-$.post("http://gathologyg.pythonanywhere.com/API/requestFormDescription/",
+$.post("https://gathologyg.pythonanywhere.com/API/requestFormDescription/",
         {
           form_name: datat
         }, function( data) {
@@ -137,7 +137,7 @@ if(!okay){ alert("Some entries don't satisfy requirements !"); $("body").css("cu
 
 
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/FormsData/Add_record/",
+        url: "https://gathologyg.pythonanywhere.com/FormsData/Add_record/",
         type: 'Post',
         dataType: "json",
         data:{

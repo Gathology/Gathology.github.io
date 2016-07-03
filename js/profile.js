@@ -10,7 +10,7 @@ $(".slogan h3").append(sessionStorage.getItem("userr_name"));
 
 
  $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/request_Scientist_forms/"+sessionStorage.getItem("userr_name"),
+        url: "https://gathologyg.pythonanywhere.com/API/request_Scientist_forms/"+sessionStorage.getItem("userr_name"),
         type: 'Get',
         dataType: "json",
         success: function( result) {
@@ -37,7 +37,7 @@ $("#createform").click(function(){
   var answer=confirm("Are you sure that you want to permenantly delete "+deletedform+"?");
 if(answer==true)
     $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/deleteForm/"+sessionStorage.getItem("userr_name")+"/"+deletedform,
+        url: "https://gathologyg.pythonanywhere.com/API/deleteForm/"+sessionStorage.getItem("userr_name")+"/"+deletedform,
         type: 'DELETE',
         dataType: "json"
     }).fail(function() {
@@ -75,7 +75,7 @@ if(answer==true)
   stringg="0";
   else stringg="1";
 $.ajax({
-        url: "http://gathologyg.pythonanywhere.com/API/set_Enabled/",
+        url: "https://gathologyg.pythonanywhere.com/API/set_Enabled/",
         type: 'Post',
         data:{form_name:formname,
           enabled:stringg},
