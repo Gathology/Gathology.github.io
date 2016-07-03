@@ -1,0 +1,208 @@
+    <!DOCTYPE html>
+
+    <!-- START HEAD -->
+    <head>
+        <meta charset="UTF-8" />
+
+   
+
+        <title>Form Locations</title>
+
+        <!-- RESET STYLESHEET -->
+        <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+        <!-- BOOTSTRAP STYLESHEET -->
+        <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" />
+        <!-- MAIN THEME STYLESHEET -->
+        <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+
+
+        <link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=Playfair+Display%7COpen+Sans+Condensed%3A300%7COpen+Sans%7CShadows+Into+Light%7CMuli%7CDroid+Sans%7CArbutus+Slab%7CAbel&#038;ver=3.5.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='responsive-css'  href='css/responsive.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='font-awesome-css'  href='css/font-awesome.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='custom-css'  href='css/custom.css' type='text/css' media='all' />
+
+  
+        <script type='text/javascript' src='js/jquery/jquery.js'></script>
+
+
+        <!-- Edit Begins-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script>
+
+        jQuery(function($){
+            google.charts.load('current', { 'packages': ['map'] });
+            //google.charts.setOnLoadCallback(drawMap);
+            var fname=sessionStorage.getItem("form_name");
+            
+            //fname=fname.replace(/\s+/g, '');
+            
+            fname =fname.substring(0, fname.length - 3);
+            $.ajax({
+            url: "http://gathologyg.pythonanywhere.com/FormsData/FormsDataApp/",
+            type: 'Post',
+            dataType: "json",
+            data:{ key:JSON.stringify({
+                    form_name:fname,
+                    chart_name:'MAP',
+                    cols_name:['latitude','longitude'],
+                    fill_cols:[],
+                    fill_vals:[],
+                    drop_cols:[],
+                    drop_vals:[],
+                    repl_dict:{},
+                    aggr_func:'count',
+                    one_col:false
+                    }
+                )},
+
+            success: function(result) {   
+                //for(var i=0;i<result.length;i++)
+                //    result[i]= +result[i];
+                //result.splice(0, 0, ['longitude','latitude']);
+                result= JSON.stringify(result);
+                result=$.parseJSON(result);
+                if(result===[])
+                    alert("No geo-locations yet!");
+                else{
+                result.splice(0, 0, ['latitude','longitude']);
+                var data = google.visualization.arrayToDataTable(result);
+                var options = { showTip: true,mapType: 'normal', zoomLevel:1};
+                var map = new google.visualization.Map(document.getElementById('chart_div'));
+                map.draw(data, options);
+            }
+            },
+            fail: function( result) {
+                alert("Failed to connect to server");
+                    }
+            });
+
+        });
+
+        </script>
+    <!-- Edit Finished-->
+    
+    </head>
+    <!-- END HEAD -->
+    <!-- START BODY -->
+    <body class="home page no_js responsive stretched">
+
+    <!-- START BG SHADOW -->
+    <div class="bg-shadow">
+
+    <!-- START WRAPPER -->
+        <div id="wrapper" class="container group">
+
+            <!-- START TOP BAR -->
+            <div id="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div id="nav" class="span12 light">
+
+<!-- START MAIN NAVIGATION -->
+
+                            <ul id="menu-menu" class="level-1">
+                                <li>
+                                    <a href="index.html">HOME</a>
+                                 
+                                        
+                                        <li>
+                                            <a href="About.html">About</a>
+                                          
+                                        </li>
+                                     
+                               
+                                <li>
+                                    <a href="contact.html">CONTACT</a>
+                                   
+                                </li>
+                                            <li>
+                                            <a href="Help.html">Help</a>
+                                        </li>
+
+                            </ul>
+
+                            <!-- END MAIN NAVIGATION -->
+                            <!-- START TOPBAR LOGOUT-->
+			                         <div id="topbar_logout" class="not_logged_in">
+
+                                <a class="topbar_logout">
+                                    LOGOUT
+                                </a>
+                            </div>
+                            <div id="toprofilepage" class="not_logged_in">
+
+                                <a class="toprofilepage" href="profile.html">
+                                    MY PROFILE
+                                </a>
+                            </div>
+
+                                 <div id="topbar_comment" class="cc">
+
+                            <a class="topbar_comment" href="comment.html">
+                            <img src="images/comment.png" title="Comment&Rate"/> Categories
+                            </a></div> 
+							<!--END TOPBAR LOGout-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- END TOP BAR -->
+
+        <!-- START HEADER -->
+        <div id="header" class="group margin-bottom">
+
+            <div class="group container">
+                <div class="row" id="logo-headersidebar-container">
+                    <!-- START LOGO -->
+                    <div id="logo" class="span6 group">
+                        <a id="logo-img" href="index.html" title="Libra">
+                            <img src="images/Geo_logo.png" title="Libra" alt="Libra" />
+                        </a>
+                        <p id='tagline'>Welcome in Gathology</p>
+                    </div>
+                    <!-- END LOGO -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END HEADER -->
+
+                <!-- END PAGE META -->
+                                
+                </div>
+            </div>
+        </div>
+        <!-- END PRIMARY -->
+        <div id="chart_div"></div>
+
+                <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="left span6">
+                        <p>
+                           <img src="images/Geo_logo.png" style="width:80px; height:20px;position:relative; top:9px; margin: -22px 5px 0 0;">&nbsp;Copyright 2016 - <strong>Gathology</strong> by Faculty of Computers&Information,Assiut University
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        </div>
+    <!-- END WRAPPER -->
+
+    </div>
+    <!-- END BG SHADOW -->
+    <script type='text/javascript' src='js/jquery/jquery.masonry.min.js'></script>
+    <script type='text/javascript' src='js/jquery.colorbox-min.js'></script>
+    <script type='text/javascript' src='js/responsive.js'></script>
+    <script type='text/javascript' src='js/jquery.placeholder.js'></script>
+    <script type='text/javascript' src='js/jquery.custom.js'></script>
+
+<script type='text/javascript' src='js/logoutonly.js'></script>
+    </body>
+    <!-- END BODY -->
+    </html>
