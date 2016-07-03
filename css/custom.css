@@ -25,7 +25,7 @@ code, pre, body hr, #copyright .inner, #footer .inner, .gallery img, .gallery im
 .portfolio-big-image .work-thumbnail .thumb-wrapper:hover, .related_project .related_img:hover, .portfolio-categories ul li:hover, #portfolio .more-link:hover, .portfolio-big-image a.more:hover, #portfolio.columns .overlay_a:hover, .showcase-thumbnail img:hover, .widget_archive ul li a:hover, .widget_nav_menu ul li a:hover, .widget_pages ul li a:hover, .widget_categories ul li a:hover, .picture_overlay:hover, .section-portfolio-classic .work-projects a.img:hover, .section-portfolio-classic .work-projects a.img.active { border-color: #cccccc; }
 #page-meta { background-color: rgba( 235, 232, 232, 0.3 ); }
 #back-top { background-color: #666565; }
-#header, #header .slider.polaroid .thumbs .thumb img { background-color: #193654; background-image: url('http://yit.com/libra/wp-content/themes/libra/images/header-pattern.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+#header, #header .slider.polaroid .thumbs .thumb img { background-color: #193654; background-repeat: repeat; background-position: top left; background-attachment: scroll; }
 #topbar_login a.topbar_login { border-color: #19344E; background-color: #102438; font-size: 8px; font-family: 'Open Sans', sans-serif; color: #ffffff; font-style: normal; font-weight: 700; }
 #fast-login { background-color: rgba( 16, 36, 56, 0.88 ); }
 #fast-login input { border-color: #1B3754; background-color: #0D2033; }
@@ -42,7 +42,7 @@ code, pre, body hr, #copyright .inner, #footer .inner, .gallery img, .gallery im
 .error-404-text p a:hover { color: #6c6d03; }
 div.popup .title { font-size: 20px; font-family: 'Open Sans', sans-serif; color: #0c243d; font-style: normal; font-weight: 800; }
 div.popup, div.popup_message, div.popup_message p, div.popup_message span { font-size: 12px; font-family: 'Open Sans', sans-serif; color: #676768; font-style: normal; font-weight: 400; }
-#portfolios { background: #ffffff url('http://yit.com/libra/wp-content/themes/libra/images/backgrounds/032.jpg'); font-size: 18px; font-family: 'Abel', sans-serif; color: #000000; font-style: italic; font-weight: 700; }
+#portfolios { font-size: 18px; font-family: 'Abel', sans-serif; color: #000000; font-style: italic; font-weight: 700; }
 .call-to-action-two { background-color: #F8F7F7; border-color: #DDDDDD; }
 div.call-three { background-color: #F8F7F7; border-color: #F2F0F0; }
 div.box.success-box { font-size: 13px; font-family: 'Open Sans', sans-serif; color: #599847; font-style: normal; font-weight: 400; }

@@ -3,7 +3,7 @@
  * Version: 0.2.3
  * Author:  Gianluca Guarini
  * Contact: gianluca.guarini@gmail.com
- * Website: http://www.gianlucaguarini.com/
+ * Website: https://www.gianlucaguarini.com/
  * Twitter: @gianlucaguarini
  *
  * Copyright (c) 2012 Gianluca Guarini

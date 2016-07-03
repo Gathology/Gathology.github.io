@@ -1,7 +1,7 @@
 /*
 * Placeholder plugin for jQuery
 * ---
-* Copyright 2010, Daniel Stocks (http://webcloud.se)
+* Copyright 2010, Daniel Stocks (https://webcloud.se)
 * Released under the MIT, BSD, and GPL Licenses.
 */
 (function($) {
