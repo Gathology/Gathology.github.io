@@ -37,15 +37,16 @@ $.post("https://gathologyg.pythonanywhere.com/API/login/",
           username: $("#user").val(),
           password:$("#pass").val()
         }, function( data,status) {
+        	status=status.toLowerCase();
           if(status=="success"){
             sessionStorage.setItem("userr_name",$("#user").val());
-	window.open("profile.html","_self");}
-else if(status=="timeout"){
-  $("body").css("cursor","default");
-    alert("Check your internet connection!");
-}
-else { $("body").css("cursor","default");
-    alert("Username or password doesn't match!");}
+		window.open("profile.html","_self");}
+	else if(status=="request_timeout"){
+  		$("body").css("cursor","default");
+    		alert("Check your internet connection!");
+	}
+	else { $("body").css("cursor","default");
+    		alert("Username or password doesn't match!");}
 	}, "json");
 
 
