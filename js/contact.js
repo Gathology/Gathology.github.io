@@ -189,9 +189,9 @@ var con=$("#confirm-contact-form").val();
         })},
         success: function( result) {
         	window.sessionStorage.setItem("userr_name",username);
-window.location.assign("profile.html");
+		window.location.assign("profile.html");
         },
-        fail: function() {
+        error: function() {
     alert("Username or email already exists!");
   }
     });
