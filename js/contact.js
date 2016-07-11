@@ -192,7 +192,7 @@ var con=$("#confirm-contact-form").val();
 		window.location.assign("profile.html");
         },
         error: function() {
-    alert("Username or email already exists!");
+    alert("Username or email or phone number already exists!");
   }
     });
 
